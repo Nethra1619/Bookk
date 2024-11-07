@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.book {
+  background-color: fff;
+  border: 1px solid ccc;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.book-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.book-author {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.book-content {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.page-turner {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: 4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.page-turner:hover {
+  background-color: 3e8e41;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="book">
+    <h1 class="book-title">Book Title</h1>
+    <p class="book-author">By Author Name</p>
+
+    <div class="book-content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec urna in leo dictum mattis. Aenean et laoreet lectus. Maecenas non massa eu quam feugiat dictum at sed lacus.</p>
+      <p>Donec condimentum, diam sit amet eleifend blandit, elit est euismod orci, vel volutpat mauris velit ac lorem. Vestibulum et diam id neque dignissim euismod. Nullam quis lectus vel eros bibendum semper. Aenean sed libero sed libero egestas mattis.</p>
+    </div>
+  </div>
+</div>
+
+<button class="page-turner">Next Page</button>
+
+<script>
+  const pageTurner = document.querySelector('.page-turner');
+  const bookContent = document.querySelector('.book-content');
+
+  let currentPage = 1;
+  const pages = [
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec urna in leo dictum mattis. Aenean et laoreet lectus. Maecenas non massa eu quam feugiat dictum at sed lacus.</p><p>Donec condimentum, diam sit amet eleifend blandit, elit est euismod orci, vel volutpat mauris velit ac lorem. Vestibulum et diam id neque dignissim euismod. Nullam quis lectus vel eros bibendum semper. Aenean sed libero sed libero egestas mattis.</p>,
+    <p>Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi.</p>
+  ];
+
+  pageTurner.addEventListener('click', () => {
+    currentPage++;
+    if (currentPage > pages.length) {
+      currentPage = 1;
+    }
+    bookContent.innerHTML = pages[currentPage - 1];
+  });
+</script>
+
+</body>
+</html>
+
